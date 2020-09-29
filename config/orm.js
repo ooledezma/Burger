@@ -16,6 +16,7 @@ function printQuestionMarks(num) {
   return arr.toString();
 }
 
+
 // Helper function to convert object key/value pairs to SQL syntax
 function objToSql(ob) {
   var arr = [];
@@ -39,7 +40,8 @@ function objToSql(ob) {
   return arr.toString();
 }
 
-// Object for all our SQL statement functions.
+// function to select all
+
 var orm = {
   all: function(tableInput, cb) {
     var queryString = "SELECT * FROM " + tableInput + ";";
@@ -50,6 +52,9 @@ var orm = {
       cb(result);
     });
   },
+
+// function to Insert
+
   create: function(table, cols, vals, cb) {
     var queryString = "INSERT INTO " + table;
 
@@ -70,7 +75,9 @@ var orm = {
       cb(result);
     });
   },
-  // An example of objColVals would be {name: panther, sleepy: true}
+
+// Function to Update
+// An example of objColVals would be {name: panther, sleepy: true}
   update: function(table, objColVals, condition, cb) {
     var queryString = "UPDATE " + table;
 
@@ -88,6 +95,8 @@ var orm = {
       cb(result);
     });
   },
+
+// Function to delete
   delete: function(table, col, id, cb){
     const queryString = `DELETE FROM ${table} where ${col} = ${id}`
 
