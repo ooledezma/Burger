@@ -1,6 +1,7 @@
 <div class="container">
   <div class="py-5 text-center">
-    <img class="d-block mx-auto mb-4" src="..\public\assets\img\" alt="" width="72" height="72">
+    <img class="d-block mx-auto mb-4" src="/assets/img/burger.png" alt="" width="72" height="72">
+
     <h2>Eat-Da-Burger!</h2>
 
   </div>
@@ -8,9 +9,9 @@
   <h2>Burgers!</h2>
 
   <ul>
-    {{#each cats}}
-    {{#unless sleepy}}
-    {{> cats/cat-block sleep=true}}
+    {{#each burgers}}
+    {{#unless devoured}}
+    {{> burgers/burger-block devour=true}}
     {{/unless}}
     {{/each}}
   </ul>
@@ -18,10 +19,10 @@
   <h2>Devoured Burgers!</h2>
 
   <ul>
-    {{#each cats}}
-    {{#if sleepy}}
-    {{> cats/cat-block sleep=false}}
-    {{/if}}
+    {{#each burgers}}
+    {{#unless devoured}}
+    {{> burgers/devour-block devour=false}}
+    {{/unless}}
     {{/each}}
   </ul>
 
@@ -29,15 +30,9 @@
   <form class="create-form">
 
     <div class="form-group">
-      <label for="ca">Cat Name:</label>
-      <input type="text" id="ca" name="name">
+      <label for="burger">Burger Name</label>
+      <input type="text" id="burger" name="burger_name">
     </div>
 
-    <div class="form-group">
-      <label for="slee">Sleepy?</label><br>
-      <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-      <input type="radio" name="sleepy" value="0"> Awake
-    </div>
-
-    <button type="submit">Add Cat</button>
+    <button type="submit">Add Burger</button>
   </form>
