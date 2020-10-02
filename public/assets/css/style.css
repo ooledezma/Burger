@@ -1,7 +1,10 @@
-li {
-  padding: 5px;
-  margin: 5px;
-  background: #faebd7;
+body {
+  background: #ee851c;
+}
+
+.list-group-item {
+  background: #ffdd42;
+  height: 50px;
 }
 
 .label {

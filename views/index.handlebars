@@ -1,38 +1,54 @@
 <div class="container">
   <div class="py-5 text-center">
-    <img class="d-block mx-auto mb-4" src="/assets/img/burger.png" alt="" width="72" height="72">
+    <img class="d-block mx-auto mb-4" src="/assets/img/burger.png" alt="" width="150" height="150">
 
     <h2>Eat-Da-Burger!</h2>
 
   </div>
+  <div class="row">
+    <div class="col">
+      <h2 class="text-center">Burgers!</h2>
 
-  <h2>Burgers!</h2>
-
-  <ul>
-    {{#each burgers}}
-    {{#unless devoured}}
-    {{> burgers/burger-block devour=true}}
-    {{/unless}}
-    {{/each}}
-  </ul>
-
-  <h2>Devoured Burgers!</h2>
-
-  <ul>
-    {{#each burgers}}
-    {{#unless devoured}}
-    {{> burgers/devour-block devour=false}}
-    {{/unless}}
-    {{/each}}
-  </ul>
-
-  <h2>Add a Burger</h2>
-  <form class="create-form">
-
-    <div class="form-group">
-      <label for="burger">Burger Name</label>
-      <input type="text" id="burger" name="burger_name">
+      <ul class="list-group">
+        {{#each burgers}}
+        {{#unless devoured}}
+        {{> burgers/burger-block devour=true}}
+        {{/unless}}
+        {{/each}}
+      </ul>
     </div>
 
-    <button type="submit">Add Burger</button>
-  </form>
+    <div class="col">
+      <h2 class="text-center">Devoured Burgers!</h2>
+
+      <ul class="list-group">
+        {{#each burgers}}
+        {{#unless devoured}}
+        {{> burgers/devour-block devour=false}}
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="pt-5 text-center">
+        <h2>Add a Burger</h2>
+      </div>
+
+
+      <div class="form-group">
+        <form class="create-form">
+
+
+          <label for="burger">Burger Name:</label>
+          <input type="text" id="burger" name="burger_name">
+      </div>
+
+
+      <button type="submit">Add Burger</button>
+      </form>
+
+    </div>
+  </div>
