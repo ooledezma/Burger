@@ -34,8 +34,7 @@ npm start
 
 Screenschot
 
-![](./assets/img/burger.png")
-
+<img src="public/assets/img/screenshot.PNG">
 
 ## License
 
